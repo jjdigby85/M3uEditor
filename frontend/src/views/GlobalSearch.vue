@@ -47,7 +47,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import api from '@/api' // Axios instance with auth headers
+import api from '../api' // Axios instance with auth headers
 
 const searchQuery = ref('')
 const selectedType = ref('')
