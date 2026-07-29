@@ -3,7 +3,8 @@ const playlistController = require('../controllers/playlistController');
 const authMiddleware = require('../middleware/auth');
 
 const router = express.Router();
-
+console.log('auth:', typeof auth); 
+console.log('globalSearch:', typeof playlistController.globalSearch);
 router.get('/global-search', authMiddleware, playlistController.globalSearch);
 router.get('/playlists', authMiddleware, playlistController.listPlaylists);
 router.post('/playlists', authMiddleware, playlistController.createPlaylist);
