@@ -107,4 +107,4 @@ async function deletePlaylist(req, res, next) {
   }
 }
 
-module.exports = { listPlaylists, createPlaylist, updatePlaylist, deletePlaylist };
+module.exports = { globalSearch, listPlaylists, createPlaylist, updatePlaylist, deletePlaylist };
