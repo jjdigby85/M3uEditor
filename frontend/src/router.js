@@ -12,6 +12,7 @@ const routes = [
   { path: '/account', component: () => import('./views/Account.vue'), meta: { auth: true } },
   { path: '/admin', component: () => import('./views/Admin.vue'), meta: { auth: true, admin: true } },
   { path: '/:pathMatch(.*)*', component: () => import('./views/NotFound.vue') },
+  { path: '/search', name: 'GlobalSearch', component: () => import('./views/GlobalSearch.vue'), meta: { auth: true } },
 ]
 
 const router = createRouter({ history: createWebHashHistory(), routes })
