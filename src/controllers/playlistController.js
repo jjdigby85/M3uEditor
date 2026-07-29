@@ -64,7 +64,7 @@ async function deletePlaylist(req, res, next) {
   }
 }
 
-const globalSearch = async (req, res, next) => {
+const GlobalSearch = async (req, res, next) => {
   try {
     const userId = req.user.id;
     const { q, type, limit = 50, offset = 0 } = req.query;
@@ -109,7 +109,7 @@ const globalSearch = async (req, res, next) => {
 };
 
 module.exports = { 
-  globalSearch, 
+  GlobalSearch, 
   listPlaylists, 
   createPlaylist, 
   updatePlaylist, 
