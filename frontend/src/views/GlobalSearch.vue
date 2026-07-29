@@ -47,7 +47,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import api from '../api' // Axios instance with auth headers
+import api from '../api.js' 
 
 const searchQuery = ref('')
 const selectedType = ref('')
@@ -65,9 +65,9 @@ const fetchResults = async () => {
     const res = await api.get('/playlists/global-search', {
       params: { q: searchQuery.value, type: selectedType.value }
     })
-    results.value = res.data.data
+    results.value = res.data.data || []
   } catch (err) {
-    console.error('Search failed', err)
+    console.error('Global search failed:', err)
   } finally {
     loading.value = false
   }
@@ -75,7 +75,7 @@ const fetchResults = async () => {
 
 const onSearchInput = () => {
   clearTimeout(debounceTimeout)
-  debounceTimeout = setTimeout(fetchResults, 300) // Debounce API calls
+  debounceTimeout = setTimeout(fetchResults, 300)
 }
 </script>
 
