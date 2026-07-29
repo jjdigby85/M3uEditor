@@ -66,7 +66,8 @@ async function deletePlaylist(req, res, next) {
 
 const GlobalSearch = async (req, res, next) => {
   try {
-    const userId = req.user.id;
+    const userId = req.userId
+      ;
     const { q, type, limit = 50, offset = 0 } = req.query;
 
     if (!q || q.trim() === '') {
