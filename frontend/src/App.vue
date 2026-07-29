@@ -46,7 +46,11 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
           {{ t('nav.playlists') }}
         </router-link>
-        <router-link v-if="auth.user?.is_admin" to="/admin" class="nav-link" active-class="active">Yönetim</router-link>
+        <router-link to="/search" class="nav-link" active-class="active">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          Global-Search
+        </router-link>
+        <router-link v-if="auth.user?.is_admin" to="/admin" class="nav-link" active-class="active">Admin</router-link>
       </nav>
 
       <div class="header-right">
