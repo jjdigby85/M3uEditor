@@ -62,7 +62,7 @@ const fetchResults = async () => {
   }
   loading.value = true
   try {
-    const res = await api.get('/playlists/global-search', {
+    const res = await api.get('/playlists/GlobalSearch', {
       params: { q: searchQuery.value, type: selectedType.value }
     })
     results.value = res.data?.data || []
